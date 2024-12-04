@@ -1,0 +1,121 @@
+Bondarenko,j1,Lk,Candidate Master,85
+Shevchenko,c2,Fk,Master of Sports,92
+Kovalenko,j1,Lk,Master of Sports of International Class,75
+Ivanov,c3,Fk,Candidate Master,80
+Petrov,j2,Lk,Master of Sports,90
+Kuzmenko,c1,Fk,Master of Sports of International Class,88
+Melnyk,j1,Lk,Candidate Master,85
+Sidorov,c2,Fk,Master of Sports,93
+Nikolaev,j2,Lk,Master of Sports of International Class,78
+Moroz,c3,Fk,Candidate Master,87
+Goncharov,j1,Lk,Master of Sports,91
+Zaytsev,c2,Fk,Master of Sports of International Class,82
+Romanenko,j1,Lk,Candidate Master,84
+Fedorov,c3,Fk,Master of Sports,89
+Pavlenko,j2,Lk,Master of Sports of International Class,90
+Bohdanov,c2,Fk,Candidate Master,86
+Tymoshenko,j1,Lk,Master of Sports,76
+Novikova,c3,Fk,Master of Sports of International Class,80
+Karpov,j2,Lk,Candidate Master,88
+Klimenko,c1,Fk,Master of Sports,92
+Borysov,j2,Lk,Master of Sports of International Class,81
+Ostapenko,c3,Fk,Candidate Master,74
+Petrova,j1,Lk,Master of Sports,79
+Belyaev,c1,Fk,Master of Sports of International Class,95
+Matsenko,j1,Lk,Candidate Master,83
+Shapovalov,c2,Fk,Master of Sports,90
+Lysenko,j2,Lk,Master of Sports of International Class,77
+Yarmolenko,c3,Fk,Candidate Master,93
+Grygorenko,j1,Lk,Master of Sports,78
+Kovalenko,c2,Fk,Master of Sports of International Class,85
+Trush,j1,Lk,Candidate Master,94
+Panchuk,c3,Fk,Master of Sports,82
+Zaitseva,j2,Lk,Master of Sports of International Class,88
+Shevchuk,c1,Fk,Candidate Master,91
+Mikhalchuk,j2,Lk,Master of Sports,80
+Kostyuk,c3,Fk,Master of Sports of International Class,79
+Berezina,j1,Lk,Candidate Master,86
+Tsygankov,c2,Fk,Master of Sports,81
+Vasilenko,j1,Lk,Master of Sports of International Class,95
+Klimchuk,c3,Fk,Candidate Master,88
+Zavertailo,j2,Lk,Master of Sports,92
+Pirog,c1,Fk,Master of Sports of International Class,84
+Zolotarev,j1,Lk,Candidate Master,87
+Goncharenko,c2,Fk,Master of Sports,89
+Baranov,j2,Lk,Master of Sports of International Class,85
+Kravets,c3,Fk,Candidate Master,80
+Kozak,j1,Lk,Master of Sports,75
+Tymchyshyn,c2,Fk,Master of Sports of International Class,94
+Kalashnikov,j2,Lk,Candidate Master,83
+Sushko,c3,Fk,Master of Sports,81
+Vovk,j1,Lk,Master of Sports of International Class,91
+Kozlov,c2,Fk,Candidate Master,92
+Danylov,j1,Lk,Master of Sports of International Class,82
+Tymoshenko,c3,Fk,Master of Sports,84
+Rudenko,j2,Lk,Candidate Master,77
+Pavlov,c1,Fk,Master of Sports of International Class,79
+Sokolov,j1,Lk,Candidate Master,90
+Kalashnikov,c2,Fk,Master of Sports,95
+Teterivskyi,j1,Lk,Master of Sports of International Class,88
+Vasylyuk,c3,Fk,Candidate Master,81
+Matsenko,j2,Lk,Master of Sports,87
+Polukhin,c1,Fk,Master of Sports of International Class,78
+Chernov,j1,Lk,Candidate Master,84
+Shapovalov,c3,Fk,Master of Sports,82
+Mihaylova,j1,Lk,Master of Sports of International Class,89
+Tkachuk,c2,Fk,Candidate Master,85
+Rudenko,j2,Lk,Master of Sports,80
+Fedorov,c1,Fk,Master of Sports of International Class,83
+Sydorenko,j1,Lk,Candidate Master,86
+Solovyov,c2,Fk,Master of Sports,77
+Ilyushenko,j2,Lk,Master of Sports of International Class,84
+Pavlenko,c1,Fk,Candidate Master,92
+Chernysh,j1,Lk,Master of Sports,95
+Berezovskyi,c2,Fk,Master of Sports of International Class,90
+Rudenko,j2,Lk,Candidate Master,83
+Yevtushenko,c3,Fk,Master of Sports,81
+Kovalenko,j1,Lk,Master of Sports of International Class,79
+Vasilkiv,c2,Fk,Candidate Master,88
+Kondratov,j2,Lk,Master of Sports of International Class,87
+Bystrova,c1,Fk,Candidate Master,95
+Goncharenko,j2,Lk,Master of Sports,80
+Ilyushenko,c1,Fk,Master of Sports of International Class,82
+Tarasov,j1,Lk,Candidate Master,75
+Rudenko,c3,Fk,Master of Sports,90
+Tsygankov,j2,Lk,Master of Sports of International Class,83
+Mikhalchuk,c1,Fk,Candidate Master,94
+Baranov,j2,Lk,Master of Sports of International Class,85
+Filipov,c3,Fk,Master of Sports,79
+Kalashnikov,j1,Lk,Candidate Master,90
+Kozlov,c2,Fk,Master of Sports of International Class,91
+Sydorenko,j1,Lk,Candidate Master,84
+Yermak,c3,Fk,Master of Sports,78
+Matsenko,j1,Lk,Candidate Master,82
+Vovk,c2,Fk,Master of Sports of International Class,87
+Lysenko,j2,Lk,Candidate Master,76
+Berezina,c1,Fk,Master of Sports,89
+Chernov,j1,Lk,Candidate Master,81
+Panchuk,c3,Fk,Master of Sports of International Class,92
+Solovyov,j2,Lk,Master of Sports,80
+Zaytsev,c1,Fk,Candidate Master,82
+Kostyuk,j1,Lk,Master of Sports of International Class,84
+Shapovalov,c2,Fk,Candidate Master,75
+Zhuravska,j1,Lk,Master of Sports,89
+Melnyk,c3,Fk,Master of Sports of International Class,93
+Pirog,j1,Lk,Candidate Master,91
+Yarmolenko,c2,Fk,Master of Sports,83
+Kozak,j2,Lk,Master of Sports of International Class,85
+Solovyov,c1,Fk,Candidate Master,92
+Chernyshova,j1,Lk,Master of Sports of International Class,95
+Pavlov,c2,Fk,Candidate Master,90
+Tsyganok,j2,Lk,Master of Sports,88
+Kondratov,c3,Fk,Master of Sports of International Class,83
+Mihaylova,j1,Lk,Candidate Master,85
+Zolotarev,c2,Fk,Master of Sports of International Class,77
+Sushko,j1,Lk,Candidate Master,84
+Goncharenko,c3,Fk,Master of Sports,89
+Sydorenko,j2,Lk,Master of Sports of International Class,91
+Zhuravska,j1,Lk,Candidate Master,92
+Filipov,c1,Fk,Master of Sports,75
+Trush,j2,Lk,Master of Sports of International Class,86
+Karpov,c3,Fk,Candidate Master,80
