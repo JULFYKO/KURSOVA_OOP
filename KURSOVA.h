@@ -5,7 +5,7 @@
 #include <map>
 #include <fstream>
 #include <algorithm>
-
+#include <unordered_map>
 using namespace std;
 
 struct Athlete {
@@ -16,40 +16,39 @@ struct Athlete {
     string weightClass;
 };
 
-struct Competition {
-    string type;
-    string date;
-    map<string, int> results;
-};
 
-class KickboxingCompetition {
+class KickCompetition {
 private:
     vector<Athlete> athletes;
+    
+    struct Competition {
+        string type;
+        string date;
+        unordered_map<string, int> results;
+    };
     vector<Competition> competitions;
-
 public:
     void addCompetitionType(const string& type, const string& date);
     void removeCompetition(const string& type);
     void editCompetition(const string& oldType, const string& newType);
     void recordResult(const string& type, const string& athlete, int score);
+    void showCompetitions();
     void addAthlete(const Athlete& athlete);
     void showAthletes();
-
     void saveAthletes(const string& fileName);
     void loadAthletes(const string& fileName);
-
     void sortAthletesByAgeCategory();
     void sortAthletesByCategory();
     void sortAthletesByTitle();
     void sortAthletesByWeightClass();
 };
 
-void KickboxingCompetition::addCompetitionType(const string& type, const string& date) {
+void KickCompetition::addCompetitionType(const string& type, const string& date) {
     competitions.push_back({ type, date, {} });
     cout << "Competition type \"" << type << "\" added successfully.\n";
 }
 
-void KickboxingCompetition::removeCompetition(const string& type) {
+void KickCompetition::removeCompetition(const string& type) {
     auto it = remove_if(competitions.begin(), competitions.end(),
         [&type](const Competition& c) { return c.type == type; });
     if (it != competitions.end()) {
@@ -61,7 +60,7 @@ void KickboxingCompetition::removeCompetition(const string& type) {
     }
 }
 
-void KickboxingCompetition::editCompetition(const string& oldType, const string& newType) {
+void KickCompetition::editCompetition(const string& oldType, const string& newType) {
     for (auto& competition : competitions) {
         if (competition.type == oldType) {
             competition.type = newType;
@@ -72,7 +71,7 @@ void KickboxingCompetition::editCompetition(const string& oldType, const string&
     cout << "Competition \"" << oldType << "\" not found.\n";
 }
 
-void KickboxingCompetition::recordResult(const string& type, const string& athlete, int score) {
+void KickCompetition::recordResult(const string& type, const string& athlete, int score) {
     for (auto& competition : competitions) {
         if (competition.type == type) {
             competition.results[athlete] += score;
@@ -82,13 +81,34 @@ void KickboxingCompetition::recordResult(const string& type, const string& athle
     }
     cout << "Competition \"" << type << "\" not found.\n";
 }
+void KickCompetition::showCompetitions() {
+    if (competitions.empty()) {
+        cout << "No competitions available.\n";
+        return;
+    }
 
-void KickboxingCompetition::addAthlete(const Athlete& athlete) {
+    for (const auto& competition : competitions) {
+        cout << "Competition Type: " << competition.type << "\n";
+        cout << "Date: " << competition.date << "\n";
+        if (competition.results.empty()) {
+            cout << "No results yet.\n";
+        }
+        else {
+            cout << "Results:\n";
+            for (const auto& result : competition.results) {
+                cout << result.first << ": " << result.second << " points\n";
+            }
+        }
+        cout << "-------------------------\n";
+    }
+}
+
+void KickCompetition::addAthlete(const Athlete& athlete) {
     athletes.push_back(athlete);
     cout << "Athlete \"" << athlete.surname << "\" added successfully.\n";
 }
 
-void KickboxingCompetition::showAthletes() {
+void KickCompetition::showAthletes() {
     cout << "List of Athletes:\n";
     for (const auto& athlete : athletes) {
         cout << "Surname: " << athlete.surname
@@ -99,7 +119,7 @@ void KickboxingCompetition::showAthletes() {
     }
 }
 
-void KickboxingCompetition::saveAthletes(const string& fileName) {
+void KickCompetition::saveAthletes(const string& fileName) {
     ofstream file(fileName);
     if (!file) {
         cerr << "Error opening file for saving athletes.\n";
@@ -118,7 +138,7 @@ void KickboxingCompetition::saveAthletes(const string& fileName) {
     cout << "Athletes saved successfully to " << fileName << ".\n";
 }
 
-void KickboxingCompetition::loadAthletes(const string& fileName) {
+void KickCompetition::loadAthletes(const string& fileName) {
     string fileToLoad = (fileName.empty() || fileName == "/") ? "athletes.txt" : fileName;
     ifstream file(fileToLoad);
     if (!file) {
@@ -150,7 +170,7 @@ void KickboxingCompetition::loadAthletes(const string& fileName) {
     cout << "Athletes loaded successfully from " << fileToLoad << ".\n";
 }
 
-void KickboxingCompetition::sortAthletesByAgeCategory() {
+void KickCompetition::sortAthletesByAgeCategory() {
     sort(athletes.begin(), athletes.end(),
         [](const Athlete& a, const Athlete& b) {
             return a.ageCategory < b.ageCategory;
@@ -158,7 +178,7 @@ void KickboxingCompetition::sortAthletesByAgeCategory() {
     cout << "Athletes sorted by age category.\n";
 }
 
-void KickboxingCompetition::sortAthletesByCategory() {
+void KickCompetition::sortAthletesByCategory() {
     sort(athletes.begin(), athletes.end(),
         [](const Athlete& a, const Athlete& b) {
             return a.category < b.category;
@@ -166,7 +186,7 @@ void KickboxingCompetition::sortAthletesByCategory() {
     cout << "Athletes sorted by category.\n";
 }
 
-void KickboxingCompetition::sortAthletesByTitle() {
+void KickCompetition::sortAthletesByTitle() {
     sort(athletes.begin(), athletes.end(),
         [](const Athlete& a, const Athlete& b) {
             return a.title < b.title;
@@ -174,7 +194,7 @@ void KickboxingCompetition::sortAthletesByTitle() {
     cout << "Athletes sorted by title.\n";
 }
 
-void KickboxingCompetition::sortAthletesByWeightClass() {
+void KickCompetition::sortAthletesByWeightClass() {
     sort(athletes.begin(), athletes.end(),
         [](const Athlete& a, const Athlete& b) {
             int weightA = stoi(a.weightClass);
@@ -183,77 +203,15 @@ void KickboxingCompetition::sortAthletesByWeightClass() {
         });
     cout << "Athletes sorted by weight class.\n";
 }
+void printAscii() {
+    cout << R"(
+         :::::::::::      :::    :::       :::        ::::::::::    :::   :::       :::    :::       ::::::::
+            :+:          :+:    :+:       :+:        :+:           :+:   :+:       :+:   :+:       :+:    :+:
+           +:+          +:+    +:+       +:+        +:+            +:+ +:+        +:+  +:+        +:+    +:+
+          +#+          +#+    +:+       +#+        :#::+::#        +#++:         +#++:++         +#+    +:+
+         +#+          +#+    +#+       +#+        +#+              +#+          +#+  +#+        +#+    +#+
+    #+# #+#          #+#    #+#       #+#        #+#              #+#          #+#   #+#       #+#    #+#
+    #####            ########        ########## ###              ###          ###    ###       ########
 
-void displayMenu(KickboxingCompetition& manager) {
-    int option;
-
-    while (true) {
-        system("cls");
-        cout << "Menu:\n";
-        cout << "1. Add Athlete\n";
-        cout << "2. Show Athletes\n";
-        cout << "3. Save Athletes\n";
-        cout << "4. Load Athletes\n";
-        cout << "5. Sort Athletes by Age Category\n";
-        cout << "6. Sort Athletes by Category\n";
-        cout << "7. Sort Athletes by Title\n";
-        cout << "8. Sort Athletes by Weight Class\n";
-        cout << "0. Exit\n";
-        cout << "Choose an option: ";
-        cin >> option;
-
-        switch (option) {
-        case 1: {
-            Athlete athlete;
-            cout << "Enter surname: ";
-            cin >> athlete.surname;
-            cout << "Enter age category: ";
-            cin >> athlete.ageCategory;
-            cout << "Enter category: ";
-            cin >> athlete.category;
-            cout << "Enter title: ";
-            cin >> athlete.title;
-            cout << "Enter weight class: ";
-            cin >> athlete.weightClass;
-            manager.addAthlete(athlete);
-            break;
-        }
-        case 2:
-            manager.showAthletes();
-            break;
-        case 3: {
-            string fileName;
-            cout << "Enter file name to save athletes: ";
-            cin >> fileName;
-            manager.saveAthletes(fileName);
-            break;
-        }
-        case 4: {
-            string fileName;
-            cout << "Enter file name to load athletes: ";
-            cin >> fileName;
-            manager.loadAthletes(fileName);
-            break;
-        }
-        case 5:
-            manager.sortAthletesByAgeCategory();
-            break;
-        case 6:
-            manager.sortAthletesByCategory();
-            break;
-        case 7:
-            manager.sortAthletesByTitle();
-            break;
-        case 8:
-            manager.sortAthletesByWeightClass();
-            break;
-        case 0:
-            return;
-        default:
-            cout << "Invalid option. Try again.\n";
-        }
-        system("pause");
-    }
+)";
 }
-
-
